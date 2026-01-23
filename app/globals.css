@@ -73,3 +73,14 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* Vertical stripes pattern */
+.stripes-pattern {
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 2px,
+    rgba(168, 85, 247, 0.1) 2px,
+    rgba(168, 85, 247, 0.1) 4px
+  );
+}

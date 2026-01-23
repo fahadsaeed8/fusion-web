@@ -21,12 +21,16 @@ export default function CTA() {
           </p>
           <motion.a
             href="#contact"
-            className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all hover:scale-105 shadow-lg"
+            className="group relative inline-flex items-center gap-3 px-6 py-6 rounded-full border border-white bg-white text-blue-600 text-base font-semibold transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-gray-100 shadow-lg h-14"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Get in Touch
-            <ArrowRight size={20} />
+            {/* Arrow circle - starts on left (order-1), moves to right on hover (order-3) */}
+            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-600/10 text-blue-600 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] delay-100 group-hover:bg-black group-hover:text-white order-1 group-hover:order-3 flex-shrink-0">
+              <ArrowRight size={16} className="transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] delay-200 group-hover:translate-x-0.5" />
+            </span>
+            {/* Text - stays in middle (order-2) */}
+            <span className="transition-colors duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] delay-150 order-2 whitespace-nowrap">Get in Touch</span>
           </motion.a>
         </motion.div>
       </div>
