@@ -227,10 +227,14 @@ export default function Portfolio() {
                   {/* CTA Link */}
                   <a
                     href="#"
-                    className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all group/link"
+                    className="group/link relative inline-flex items-center gap-3 px-5 py-5 rounded-full border border-gray-300 bg-white text-gray-900 font-semibold transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-blue-600 hover:border-blue-600 hover:text-white h-12"
                   >
-                    <span>View Case Study</span>
-                    <ExternalLink size={16} className="group-hover/link:translate-x-1 transition-transform duration-300" />
+                    {/* Arrow circle - starts on left (order-1), moves to right on hover (order-3) */}
+                    <span className="flex items-center justify-center w-7 h-7 rounded-full bg-gray-200 text-gray-700 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] delay-100 group-hover/link:bg-black group-hover/link:text-white order-1 group-hover/link:order-3 flex-shrink-0">
+                      <ExternalLink size={14} className="transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] delay-200 group-hover/link:translate-x-0.5" />
+                    </span>
+                    {/* Text - stays in middle (order-2) */}
+                    <span className="transition-colors duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] delay-150 group-hover/link:text-white order-2 whitespace-nowrap text-sm">View Case Study</span>
                   </a>
                 </div>
                 
@@ -244,14 +248,14 @@ export default function Portfolio() {
         <div className="text-center mt-12">
           <a
             href="#work"
-            className="group relative inline-flex items-center gap-3 px-6 py-3 rounded-full border border-gray-300 bg-white text-gray-900 font-semibold transition-all duration-500 ease-in-out hover:bg-blue-600 hover:border-blue-600 hover:text-white"
+            className="group relative inline-flex items-center gap-3 px-6 py-6 rounded-full border border-gray-300 bg-white text-gray-900 font-semibold transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-purple-600 hover:border-purple-600 hover:text-white h-14"
           >
             {/* Arrow circle - starts on left (order-1), moves to right on hover (order-3) */}
-            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-200 text-gray-700 transition-all duration-500 ease-in-out delay-75 group-hover:bg-black group-hover:text-white order-1 group-hover:order-3">
-              <span className="transition-transform duration-500 ease-in-out delay-150 group-hover:translate-x-0.5">→</span>
+            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-200 text-gray-700 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] delay-100 group-hover:bg-white/20 group-hover:text-white order-1 group-hover:order-3 flex-shrink-0">
+              <span className="transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] delay-200 group-hover:translate-x-0.5">→</span>
             </span>
             {/* Text - stays in middle (order-2) */}
-            <span className="transition-colors duration-500 ease-in-out delay-100 group-hover:text-white order-2">All Case studies</span>
+            <span className="transition-colors duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] delay-150 group-hover:text-white order-2 whitespace-nowrap">All Case studies</span>
           </a>
         </div>
       </div>

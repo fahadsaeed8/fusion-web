@@ -11,7 +11,7 @@ export default function TrustedClients() {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-semibold text-gray-700 text-center mb-12">
+        <h2 className="text-2xl font-semibold text-purple-600 text-center mb-12">
           Trusted by our Leading Clientele
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
