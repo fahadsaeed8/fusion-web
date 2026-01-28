@@ -52,69 +52,65 @@ export default function EngagementModels() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-5 md:gap-6">
           {models.map((model, index) => {
             const Icon = model.icon;
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] }
+                transition={{ duration: 0.5, delay: index * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
+                whileHover={{
+                  scale: 1.03,
+                  y: -4,
+                  transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] },
                 }}
-                className="group relative bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-purple-200 hover:bg-gradient-to-br hover:from-purple-600 hover:to-purple-700 text-center cursor-pointer overflow-hidden"
+                className="group relative bg-white p-5 md:p-6 rounded-xl shadow-sm hover:shadow-xl transition-all duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] border border-gray-100 hover:border-purple-200 hover:bg-gradient-to-br hover:from-purple-600 hover:to-purple-700 text-center cursor-pointer overflow-hidden"
               >
                 {/* Decorative background pattern on hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-full blur-3xl"></div>
-                  <div className="absolute bottom-0 left-0 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] pointer-events-none">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-white/20 rounded-full blur-2xl"></div>
+                  <div className="absolute bottom-0 left-0 w-28 h-28 bg-white/10 rounded-full blur-2xl"></div>
                 </div>
-                
+
                 {/* Content wrapper with relative positioning */}
                 <div className="relative z-10">
                   {/* Icon with purple background */}
-                  <div className="w-16 h-16 bg-purple-100 group-hover:bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-500 group-hover:scale-110">
-                    <Icon className="w-8 h-8 text-purple-700 group-hover:text-white transition-colors duration-500" />
+                  <div className="w-11 h-11 md:w-12 md:h-12 bg-purple-100 group-hover:bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-105">
+                    <Icon className="w-5 h-5 md:w-6 md:h-6 text-purple-700 group-hover:text-white transition-colors duration-400" />
                   </div>
-                  
-                  {/* Title with color transition */}
-                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-white mb-4 transition-colors duration-500">
+
+                  {/* Title - smaller to match card size */}
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900 group-hover:text-white mb-2.5 transition-colors duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]">
                     {model.title}
                   </h3>
-                  
-                  {/* Description with color transition */}
-                  <p className="text-gray-600 group-hover:text-white/90 mb-6 leading-relaxed transition-colors duration-500">
+
+                  {/* Description - smaller text */}
+                  <p className="text-sm text-gray-600 group-hover:text-white/90 mb-4 leading-relaxed transition-colors duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]">
                     {model.description}
                   </p>
                 </div>
-                
-                {/* CTA Button - Simple purple button for Fixed Price Model, arrow button for others */}
+
+                {/* CTA Button - smaller, seamless transitions */}
                 <div className="relative z-10">
                   {index === 1 ? (
-                    // Fixed Price Model - Simple purple button
                     <a
                       href="#contact"
-                      className="inline-block px-6 py-3 rounded-full bg-purple-600 text-white font-semibold transition-all duration-300 hover:bg-purple-700 hover:scale-105"
+                      className="inline-block px-4 py-2 text-sm rounded-full bg-purple-600 text-white font-medium transition-all duration-350 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:bg-purple-700 hover:scale-[1.02]"
                     >
                       {model.cta}
                     </a>
                   ) : (
-                    // Other cards - Arrow button style
                     <a
                       href="#contact"
-                      className="group/btn relative inline-flex items-center gap-3 px-6 py-6 rounded-full border border-gray-300 bg-white text-gray-900 font-semibold transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:bg-white group-hover:border-white group-hover:text-purple-600 h-14 mx-auto"
+                      className="group/btn relative inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-gray-300 bg-white text-gray-900 text-sm font-medium transition-all duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:bg-white group-hover:border-white group-hover:text-purple-600 mx-auto"
                     >
-                      {/* Arrow circle - starts on left (order-1), moves to right on hover (order-3) */}
-                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-200 text-gray-700 group-hover:bg-purple-600 group-hover:text-white transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] delay-100 order-1 group-hover:order-3 flex-shrink-0">
-                        <span className="transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] delay-200 group-hover:translate-x-0.5">→</span>
+                      <span className="flex items-center justify-center w-6 h-6 rounded-full bg-gray-200 text-gray-700 group-hover:bg-purple-600 group-hover:text-white transition-all duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] delay-75 order-1 group-hover:order-3 flex-shrink-0">
+                        <span className="text-xs transition-transform duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] delay-100 group-hover:translate-x-0.5">→</span>
                       </span>
-                      {/* Text - stays in middle (order-2) */}
-                      <span className="transition-colors duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] delay-150 group-hover:text-purple-600 order-2 whitespace-nowrap">{model.cta}</span>
+                      <span className="transition-colors duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] delay-100 group-hover:text-purple-600 order-2 whitespace-nowrap">{model.cta}</span>
                     </a>
                   )}
                 </div>

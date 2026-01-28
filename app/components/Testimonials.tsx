@@ -127,7 +127,7 @@ export default function Testimonials() {
                         : 'text-gray-300'
                     }`}
                   >
-                    "{testimonial.text}"
+                    {testimonial.text}
                   </p>
                   <div>
                     <p

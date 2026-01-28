@@ -84,3 +84,10 @@ body {
     rgba(168, 85, 247, 0.1) 4px
   );
 }
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
