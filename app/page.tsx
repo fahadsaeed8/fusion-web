@@ -7,6 +7,7 @@ import Portfolio from './components/Portfolio';
 import Technologies from './components/Technologies';
 import EngagementModels from './components/EngagementModels';
 import Testimonials from './components/Testimonials';
+import FeaturedSlider from './components/FeaturedSlider';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 
@@ -22,8 +23,12 @@ export default function Home() {
       <Technologies />
       <EngagementModels />
       <Testimonials />
-      <CTA />
-      <Footer />
+      {/* Slider + CTA + Footer: white and footer bg meet behind CTA, no separating line */}
+      <div className="relative bg-white">
+        <FeaturedSlider />
+        <CTA />
+        <Footer />
+      </div>
     </main>
   );
 }
