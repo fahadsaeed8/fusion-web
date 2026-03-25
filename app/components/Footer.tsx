@@ -19,7 +19,7 @@ export default function Footer() {
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div className="min-w-0">
             <h3 className="text-2xl font-bold text-white mb-4">
               Fusion<span className="text-purple-600">Web</span>
@@ -28,17 +28,16 @@ export default function Footer() {
               Delivering custom digital solutions to ensure your business stays
               competitive and future-ready.
             </p>
-            <h4 className="text-white font-semibold mb-2">Subscribe</h4>
-            <p className="text-gray-400 mb-4 text-sm">Subscribe to our newsletter</p>
-            <form className="flex flex-col sm:flex-row gap-2">
+            <h4 className="text-white font-semibold mb-2">Subscribe to our newsletter</h4>
+            <form className="flex flex-col gap-2">
               <input
                 type="email"
                 placeholder="Enter Your Email Address"
-                className="flex-1 min-w-0 px-4 py-2.5 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500"
+                className="px-4 py-2.5 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500"
               />
               <button
                 type="submit"
-                className="px-6 py-2.5 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors whitespace-nowrap flex-shrink-0"
+                className="px-6 py-2.5 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
               >
                 Subscribe
               </button>
@@ -72,15 +71,48 @@ export default function Footer() {
           </div>
 
           <div className="min-w-0">
+            <h4 className="text-white font-semibold mb-4">Locations</h4>
+            <div className="space-y-6">
+              <div>
+                <h5 className="text-white font-semibold mb-2">USA</h5>
+                <p className="text-gray-400 text-sm">
+                  DE, USA,<br />
+                  8 The Green, STE R<br />
+                  Dover, DE 19901
+                </p>
+              </div>
+              <div>
+                <h5 className="text-white font-semibold mb-2">PAK</h5>
+                <p className="text-gray-400 text-sm">
+                  7/B-3 Aziz Avenue, Canal Rd,<br />
+                  Gulberg-V Lahore, 54000
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="min-w-0">
             <h4 className="text-white font-semibold mb-4">Contact Us</h4>
             <div className="space-y-3">
-              <div className="flex items-center gap-2">
-                <Phone size={16} />
-                <span>+1 (555) 123-4567</span>
+              <div>
+                <p className="text-gray-400 text-sm mb-1">USA</p>
+                <a href="tel:+13027869990" className="text-white hover:text-purple-400 transition-colors flex items-center gap-2">
+                  <Phone size={16} />
+                  +1 (302) 786-9990
+                </a>
               </div>
-              <div className="flex items-center gap-2">
-                <Mail size={16} />
-                <span>contact@fusionweb.com</span>
+              <div>
+                <p className="text-gray-400 text-sm mb-1">PAK</p>
+                <a href="tel:+923164067232" className="text-white hover:text-purple-400 transition-colors flex items-center gap-2">
+                  <Phone size={16} />
+                  +92 (316) 4067232
+                </a>
+              </div>
+              <div>
+                <a href="mailto:contact@fusionweb.com" className="text-white hover:text-purple-400 transition-colors flex items-center gap-2">
+                  <Mail size={16} />
+                  contact@fusionweb.com
+                </a>
               </div>
             </div>
           </div>

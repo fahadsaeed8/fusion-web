@@ -84,7 +84,7 @@ export default function CareerPage() {
       <Navbar />
 
       {/* Hero – purple gradient, faded "Careers", main heading */}
-      <section className="relative bg-gradient-to-b from-purple-900/90 via-purple-800/80 to-purple-700/70 py-24 md:py-32 overflow-hidden flex items-center min-h-[280px]">
+      <section className="relative bg-gradient-to-b from-purple-900/90 via-purple-800/80 to-purple-700/70 py-24 md:py-32 overflow-hidden flex items-center min-h-[600px] ">
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <span
             className="text-[clamp(4rem,15vw,10rem)] font-bold text-purple-500/20 select-none"
