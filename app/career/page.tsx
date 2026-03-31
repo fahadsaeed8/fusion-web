@@ -1,5 +1,5 @@
 'use client';
-
+import { useEffect } from "react";
 import Image from 'next/image';
 import Navbar from '../components/Navbar';
 import CTA from '../components/CTA';
@@ -44,6 +44,7 @@ const PROCESS_STEPS = [
   },
 ];
 
+
 const PERKS = [
   {
     icon: Fuel,
@@ -79,6 +80,32 @@ const GALLERY_IMAGES = [
 ];
 
 export default function CareerPage() {
+
+ useEffect(() => {
+  const elements = document.querySelectorAll(".career-appear, .career-block");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add class when it enters the screen
+          entry.target.classList.add("show");
+        } else {
+          // Remove class when it leaves the screen
+          entry.target.classList.remove("show");
+        }
+      });
+    },
+    {
+      threshold: 0.2, // Triggers when 20% is visible
+    }
+  );
+
+  elements.forEach((el) => observer.observe(el));
+
+  return () => observer.disconnect();
+}, []);
+
   return (
     <main className="min-h-screen overflow-x-hidden w-full bg-white">
       <Navbar />
@@ -136,126 +163,113 @@ export default function CareerPage() {
         </div>
       </section>
 
-      {/* Experience culture – heading, paragraph, large image */}
-      <section className="py-16 md:py-24 bg-white">
+      {/* Experience culture – heading, paragraph */}
+      <section className="view py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
+          <div className='career-block'><h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-4">
             Experience a culture of empowerment and inclusion.
           </h2>
-          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12 md:mb-16">
+          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-10 md:mb-12">
             We prioritize a culture where every individual is empowered to
             innovate, contribute, and make decisions that matter.
-          </p>
-          <div className="relative rounded-2xl overflow-hidden aspect-[21/9] max-h-[420px] bg-gray-100">
-            <Image
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=500&fit=crop"
-              alt="Team at work"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1200px) 100vw, 1200px"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-purple-400/20 pointer-events-none" />
-            <div className="absolute top-0 right-0 w-64 h-64 bg-purple-300/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-          </div>
-        </div>
-      </section>
+          </p></div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto w-full">
 
-      {/* Be part of something great – process intro + 3 cards */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-purple-900 text-center mb-4">
-            Be part of something great.
-          </h2>
-          <p className="text-gray-600 text-center max-w-3xl mx-auto mb-14 md:mb-20">
-            FusionWeb makes hiring easier by breaking down the steps to working
-            with us below. Our process evaluates candidates for technical
-            knowledge, IQ, communications skills, and ability to work in a team
-            environment.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-            {PROCESS_STEPS.map((step, i) => (
-              <article
-                key={i}
-                className="rounded-2xl bg-white border border-gray-100 p-8 shadow-sm hover:shadow-lg transition-shadow text-center"
-              >
-                <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-5">
-                  <step.icon className="w-8 h-8 text-purple-700" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {step.description}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+  {PROCESS_STEPS.map((step, i) => (
+    <div key={i} className="career-appear">
+      <div className="bg-white border border-gray-200 rounded-2xl shadow-md transition-all duration-300 hover:shadow-purple-300 hover:-translate-y-1 p-8 text-center">
 
-      {/* Our perks – heading, subtitle, 2x2 cards */}
-      <section className="py-16 md:py-24 bg-white">
+        {/* Icon */}
+        <div className="w-16 h-16 mx-auto mb-5 rounded-full bg-purple-100 flex items-center justify-center">
+          <step.icon className="w-7 h-7 text-purple-700" />
+        </div>
+
+        {/* Title */}
+        <h3 className="text-lg font-semibold text-gray-900 mb-3">
+          {step.title}
+        </h3>
+
+        {/* Description */}
+        <p className="text-sm text-gray-600 leading-relaxed">
+          {step.description}
+        </p>
+
+      </div>
+    </div>
+  ))}
+
+</div>
+</div>
+</section>
+<section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
             Our perks
           </h2>
-          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12 md:mb-16">
-            Let us help you build your ideal work-life balance with our amazing
-            perks.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
-            {PERKS.map((perk, i) => (
-              <article
-                key={i}
-                className="rounded-2xl bg-white border border-gray-100 p-6 md:p-8 shadow-sm hover:shadow-lg transition-shadow flex flex-col sm:flex-row sm:items-start gap-4"
-              >
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    {perk.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {perk.description}
-                  </p>
-                </div>
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center">
-                  <perk.icon className="w-6 h-6 text-gray-800" />
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Join the ranks – black heading, paragraph, image gallery */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
-            Be part of something great.
-          </h2>
           <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12 md:mb-16">
-            Join the ranks of visionaries, innovators, and creators, combining
-            talent and technology to craft a future that is dynamic, inclusive,
-            and groundbreaking.
+            Let us help you build your ideal work-life balance with our amazing perks.
           </p>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {GALLERY_IMAGES.map((src, i) => (
-              <div
-                key={i}
-                className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-gray-100"
-              >
-                <Image
-                  src={src}
-                  alt={`Team and culture ${i + 1}`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+
+            {PERKS.map((perk, i) => (
+              <div key={i} className="career-appear">
+                <div className="bg-white border border-gray-200 rounded-2xl shadow-md transition-all duration-300 hover:shadow-purple-300 hover:-translate-y-1 p-6 flex justify-between items-start">
+
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      {perk.title}
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      {perk.description}
+                    </p>
+                  </div>
+
+                  <perk.icon className="w-6 h-6 text-black" />
+
+                </div>
               </div>
             ))}
+
           </div>
         </div>
       </section>
+      <section className="py-16 md:py-24 bg-white overflow-hidden">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
+    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+      Be part of something great.
+    </h2>
+
+    <p className="text-gray-600 max-w-2xl mx-auto mb-12 md:mb-16">
+      Join the ranks of visionaries, innovators, and creators, combining talent
+      and technology to craft a future that is dynamic, inclusive, and groundbreaking.
+    </p>
+
+  </div>
+
+  {/* Slider */}
+  <div className="max-w-7xl mx-auto overflow-hidden px-4 sm:px-6 lg:px-8">
+    <div className="flex gap-6 slider-track whitespace-nowrap">
+
+      {[...GALLERY_IMAGES, ...GALLERY_IMAGES].map((img, i) => (
+        <div key={i} className="min-w-[300px] md:min-w-[350px] lg:min-w-[400px]">
+          <div className="relative h-64 rounded-2xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-purple-300 hover:-translate-y-1">
+            <Image
+              src={img}
+              alt={`Gallery ${i}`}
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+      ))}
+
+    </div>
+  </div>
+</section>
       {/* CTA + Footer */}
       <div className="relative bg-white">
         <CTA />
