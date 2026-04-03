@@ -5,11 +5,6 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
-}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -53,6 +48,20 @@ body {
   }
 }
 
+.career-appear,
+.career-block {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.7s ease-out;
+}
+
+.career-appear.show,
+.career-block.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 .animate-blob {
   animation: blob 7s infinite;
 }
@@ -69,6 +78,7 @@ body {
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -89,4 +99,21 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+.hover\:shadow-purple-300:hover {
+  box-shadow: 0 10px 25px rgba(168, 85, 247, 0.25);
+}
+@keyframes scrollSlider {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.slider-track {
+  display: flex;
+  width: max-content;
+  animation: scrollSlider 30s linear infinite;
 }
