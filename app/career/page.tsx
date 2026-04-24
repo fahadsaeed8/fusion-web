@@ -110,23 +110,48 @@ export default function CareerPage() {
     <main className="min-h-screen overflow-x-hidden w-full bg-white">
       <Navbar />
 
-      {/* Hero – purple gradient, faded "Careers", main heading */}
-      <section className="relative bg-gradient-to-b from-purple-900/90 via-purple-800/80 to-purple-700/70 py-24 md:py-32 overflow-hidden flex items-center min-h-[600px] ">
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <span
-            className="text-[clamp(4rem,15vw,10rem)] font-bold text-purple-500/20 select-none"
+      {/* Hero – modern full-screen dark gradient */}
+      <section className="relative w-full bg-white overflow-hidden">
+        <div className="relative min-h-screen overflow-hidden rounded-bl-[120px] rounded-br-[120px] bg-[#090F1F]">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#121936] via-[#161C3F] to-[#090F1F]" />
+          <div className="absolute inset-0 pointer-events-none opacity-25" aria-hidden>
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage:
+                  'repeating-linear-gradient(170deg, rgba(255,255,255,0.16) 0px, rgba(255,255,255,0.16) 1px, transparent 1px, transparent 11px)',
+              }}
+            />
+          </div>
+          <div
+            className="absolute left-1/2 top-[78%] -translate-x-1/2 w-[920px] h-[920px] rounded-full bg-black/55 blur-[120px] pointer-events-none"
             aria-hidden
-          >
-            Careers
-          </span>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-            Grow with global top talent.{' '}
-            <span className="text-purple-400">Grow with us.</span>
+          />
+        <div
+          className="absolute left-[12%] top-[56%] w-[420px] h-[420px] rounded-full bg-black/45 blur-[90px] pointer-events-none"
+          aria-hidden
+        />
+        <div
+          className="absolute right-[8%] top-[52%] w-[460px] h-[460px] rounded-full bg-black/45 blur-[100px] pointer-events-none"
+          aria-hidden
+        />
+        <div
+          className="absolute -left-20 -bottom-20 w-[360px] h-[360px] rounded-full blur-3xl bg-[#A78BFA]/35 pointer-events-none"
+          aria-hidden
+        />
+        <div
+          className="absolute -right-16 top-8 w-[280px] h-[280px] rounded-full blur-3xl bg-[#60A5FA]/25 pointer-events-none"
+          aria-hidden
+        />
+
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+          <h1 className="text-white font-extrabold uppercase leading-[1.05] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-[68px]">
+            Grow with global
+            <span className="block">top talent.</span>
+            <span className="block text-purple-400">Grow with us.</span>
           </h1>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-black/20" />
+      </div>
       </section>
 
       {/* We're Hiring – white bg, heading, paragraph, job cards */}

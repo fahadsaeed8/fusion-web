@@ -194,11 +194,7 @@ export default function Navbar() {
             {/* Get in Touch Button */}
             <a
               href="#contact"
-              className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${
-                isScrolled
-                  ? 'bg-white text-gray-900 hover:bg-purple-600 hover:text-white'
-                  : 'bg-white text-gray-900 hover:bg-purple-600 hover:text-white'
-              }`}
+              className="px-6 py-2.5 rounded-full font-medium bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-lg shadow-purple-500/20 transition duration-300 hover:from-purple-600 hover:to-blue-600"
             >
               Get in Touch
             </a>

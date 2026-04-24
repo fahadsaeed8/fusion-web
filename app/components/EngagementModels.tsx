@@ -29,30 +29,28 @@ const models = [
 
 export default function EngagementModels() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      {/* Subtle vertical stripes pattern */}
-      <div className="absolute inset-0 opacity-30" style={{
-        backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(168, 85, 247, 0.1) 2px, rgba(168, 85, 247, 0.1) 4px)',
-      }}></div>
-      
+    <section className="relative overflow-hidden bg-[#050608] py-4 md:py-6">
+      <div className="absolute inset-x-0 -bottom-12 h-10 bg-gradient-to-t from-[#0b1020] via-[#0b1020] to-transparent opacity-90" />
+      <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#050608] to-transparent" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-10"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl xl:text-6xl font-black text-white leading-tight tracking-[-0.03em] mb-4">
             How can we engage?
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
             Adapt to your unique project needs with our tech-specific models,
             designed for smart, tech-savvy solutions.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-5 md:gap-6">
+        <div className="grid gap-6 md:grid-cols-3">
           {models.map((model, index) => {
             const Icon = model.icon;
             return (
@@ -67,52 +65,34 @@ export default function EngagementModels() {
                   y: -4,
                   transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] },
                 }}
-                className="group relative bg-white p-5 md:p-6 rounded-xl shadow-sm hover:shadow-xl transition-all duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] border border-gray-100 hover:border-purple-200 hover:bg-gradient-to-br hover:from-purple-600 hover:to-purple-700 text-center cursor-pointer overflow-hidden"
+                className="group relative mx-auto overflow-hidden rounded-[32px] border border-white/10 bg-white/5 px-6 py-5 text-left shadow-[0_20px_80px_-40px_rgba(15,23,42,0.8)] transition duration-300 hover:border-purple-400/30 hover:bg-white/10 min-h-[18rem] md:max-w-[30rem]"
               >
-                {/* Decorative background pattern on hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] pointer-events-none">
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-white/20 rounded-full blur-2xl"></div>
-                  <div className="absolute bottom-0 left-0 w-28 h-28 bg-white/10 rounded-full blur-2xl"></div>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                  <div className="absolute -right-8 -top-8 h-40 w-40 rounded-full bg-purple-500/10 blur-3xl" />
+                  <div className="absolute -left-10 -bottom-8 h-44 w-44 rounded-full bg-blue-500/10 blur-3xl" />
                 </div>
 
-                {/* Content wrapper with relative positioning */}
                 <div className="relative z-10">
-                  {/* Icon with purple background */}
-                  <div className="w-11 h-11 md:w-12 md:h-12 bg-purple-100 group-hover:bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-105">
-                    <Icon className="w-5 h-5 md:w-6 md:h-6 text-purple-700 group-hover:text-white transition-colors duration-400" />
+                  <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-purple-300 shadow-inner shadow-white/5">
+                    <Icon className="h-5 w-5" />
                   </div>
 
-                  {/* Title - smaller to match card size */}
-                  <h3 className="text-lg md:text-xl font-bold text-gray-900 group-hover:text-white mb-2.5 transition-colors duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]">
+                  <h3 className="text-lg md:text-xl font-semibold text-white mb-2.5">
                     {model.title}
                   </h3>
-
-                  {/* Description - smaller text */}
-                  <p className="text-sm text-gray-600 group-hover:text-white/90 mb-4 leading-relaxed transition-colors duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]">
+                  <p className="text-sm md:text-base text-slate-300 leading-7 mb-5">
                     {model.description}
                   </p>
-                </div>
 
-                {/* CTA Button - smaller, seamless transitions */}
-                <div className="relative z-10">
-                  {index === 1 ? (
-                    <a
-                      href="#contact"
-                      className="inline-block px-4 py-2 text-sm rounded-full bg-purple-600 text-white font-medium transition-all duration-350 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:bg-purple-700 hover:scale-[1.02]"
-                    >
-                      {model.cta}
-                    </a>
-                  ) : (
-                    <a
-                      href="#contact"
-                      className="group/btn relative inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-gray-300 bg-white text-gray-900 text-sm font-medium transition-all duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:bg-white group-hover:border-white group-hover:text-purple-600 mx-auto"
-                    >
-                      <span className="flex items-center justify-center w-6 h-6 rounded-full bg-gray-200 text-gray-700 group-hover:bg-purple-600 group-hover:text-white transition-all duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] delay-75 order-1 group-hover:order-3 flex-shrink-0">
-                        <span className="text-xs transition-transform duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] delay-100 group-hover:translate-x-0.5">→</span>
-                      </span>
-                      <span className="transition-colors duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] delay-100 group-hover:text-purple-600 order-2 whitespace-nowrap">{model.cta}</span>
-                    </a>
-                  )}
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white transition duration-300 hover:bg-white/15"
+                  >
+                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-purple-200">
+                      →
+                    </span>
+                    {model.cta}
+                  </a>
                 </div>
               </motion.div>
             );
