@@ -59,28 +59,49 @@ export default function ResourcesPage() {
     <main className="min-h-screen overflow-x-hidden w-full bg-white">
       <Navbar />
 
-      {/* Hero – dark background, Blogs heading + paragraph, smaller text, centered top/bottom */}
-      <section className="relative bg-black py-16 md:py-20 overflow-hidden flex items-center min-h-[200px]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div className="text-center lg:text-left">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
-                Blogs
-              </h1>
-              <p className="text-sm md:text-base text-gray-300 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Expert Insights & Industry Trends | Stay Updated with Our Blog –
-                Your Go-To Source for Development, Design, and Innovation. Explore
-                Tips, Strategies, and Success Stories to Elevate Your Brand.
-              </p>
-            </div>
-            <div className="relative hidden lg:block h-64">
-              {/* Decorative purple shapes – stacked, gradient */}
-              <div className="absolute bottom-0 right-0 w-48 h-48 rounded-full bg-purple-600/40 blur-3xl" />
-              <div className="absolute bottom-4 right-8 w-36 h-36 rounded-full bg-purple-500/50 blur-2xl" />
-              <div className="absolute bottom-12 right-16 w-24 h-24 rounded-full bg-purple-400/60 blur-xl" />
-            </div>
+      {/* Hero – modern full-screen dark gradient */}
+      <section className="relative w-full bg-white overflow-hidden">
+        <div className="relative min-h-screen overflow-hidden rounded-bl-[120px] rounded-br-[120px] bg-[#090F1F]">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#121936] via-[#161C3F] to-[#090F1F]" />
+          <div className="absolute inset-0 pointer-events-none opacity-25" aria-hidden>
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage:
+                  'repeating-linear-gradient(170deg, rgba(255,255,255,0.16) 0px, rgba(255,255,255,0.16) 1px, transparent 1px, transparent 11px)',
+              }}
+            />
           </div>
+          <div
+            className="absolute left-1/2 top-[78%] -translate-x-1/2 w-[920px] h-[920px] rounded-full bg-black/55 blur-[120px] pointer-events-none"
+            aria-hidden
+          />
+        <div
+          className="absolute left-[12%] top-[56%] w-[420px] h-[420px] rounded-full bg-black/45 blur-[90px] pointer-events-none"
+          aria-hidden
+        />
+        <div
+          className="absolute right-[8%] top-[52%] w-[460px] h-[460px] rounded-full bg-black/45 blur-[100px] pointer-events-none"
+          aria-hidden
+        />
+        <div
+          className="absolute -left-20 -bottom-20 w-[360px] h-[360px] rounded-full blur-3xl bg-[#A78BFA]/35 pointer-events-none"
+          aria-hidden
+        />
+        <div
+          className="absolute -right-16 top-8 w-[280px] h-[280px] rounded-full blur-3xl bg-[#60A5FA]/25 pointer-events-none"
+          aria-hidden
+        />
+
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+          <h1 className="text-white font-extrabold uppercase leading-[1.05] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-[68px]">
+            Blogs
+          </h1>
+          <p className="mt-5 sm:mt-6 text-white/80 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+            Expert Insights & Industry Trends | Stay Updated with Our Blog – Your Go-To Source for Development, Design, and Innovation. Explore Tips, Strategies, and Success Stories to Elevate Your Brand.
+          </p>
         </div>
+      </div>
       </section>
 
       {/* Category filters + card grid – light background */}

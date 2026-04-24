@@ -95,33 +95,50 @@ export default function ServicesPage() {
     <main className="min-h-screen overflow-x-hidden w-full bg-white">
       <Navbar />
 
-      {/* Hero – black bg, Our Featured Work, description, purple decorative arcs */}
-      <section className="relative bg-black py-20 md:py-28 overflow-hidden flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                Our Featured Work
-              </h1>
-              <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-xl">
-                Our satisfied clients reflect our portfolio of success and
-                excellence in the tech industry. These projects are our trophies
-                that showcase our skills and full potential in the development
-                industry.
-              </p>
-            </div>
-            <div className="relative hidden lg:flex justify-end items-center h-64">
-              {/* Decorative purple arcs – hourglass-like */}
-              <div className="relative w-48 h-48">
-                <div className="absolute inset-0 border-2 border-purple-500/40 rounded-full scale-150 origin-center" />
-                <div className="absolute inset-2 border-2 border-purple-400/50 rounded-full scale-150 origin-center" />
-                <div className="absolute inset-4 border-2 border-purple-300/60 rounded-full scale-150 origin-center" />
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-24 border-2 border-purple-500/30 rounded-t-full border-b-0" />
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-24 border-2 border-purple-500/30 rounded-b-full border-t-0" />
-              </div>
-            </div>
+      {/* Hero – modern full-screen dark gradient */}
+      <section className="relative w-full bg-white overflow-hidden">
+        <div className="relative min-h-screen overflow-hidden rounded-bl-[120px] rounded-br-[120px] bg-[#090F1F]">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#121936] via-[#161C3F] to-[#090F1F]" />
+          <div className="absolute inset-0 pointer-events-none opacity-25" aria-hidden>
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage:
+                  'repeating-linear-gradient(170deg, rgba(255,255,255,0.16) 0px, rgba(255,255,255,0.16) 1px, transparent 1px, transparent 11px)',
+              }}
+            />
           </div>
+          <div
+            className="absolute left-1/2 top-[78%] -translate-x-1/2 w-[920px] h-[920px] rounded-full bg-black/55 blur-[120px] pointer-events-none"
+            aria-hidden
+          />
+        <div
+          className="absolute left-[12%] top-[56%] w-[420px] h-[420px] rounded-full bg-black/45 blur-[90px] pointer-events-none"
+          aria-hidden
+        />
+        <div
+          className="absolute right-[8%] top-[52%] w-[460px] h-[460px] rounded-full bg-black/45 blur-[100px] pointer-events-none"
+          aria-hidden
+        />
+        <div
+          className="absolute -left-20 -bottom-20 w-[360px] h-[360px] rounded-full blur-3xl bg-[#A78BFA]/35 pointer-events-none"
+          aria-hidden
+        />
+        <div
+          className="absolute -right-16 top-8 w-[280px] h-[280px] rounded-full blur-3xl bg-[#60A5FA]/25 pointer-events-none"
+          aria-hidden
+        />
+
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+          <h1 className="text-white font-extrabold uppercase leading-[1.05] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-[68px]">
+            Our Featured
+            <span className="block">Work</span>
+          </h1>
+          <p className="mt-5 sm:mt-6 text-white/80 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+            Our satisfied clients reflect our portfolio of success and excellence in the tech industry. These projects are our trophies that showcase our skills and full potential in the development industry.
+          </p>
         </div>
+      </div>
       </section>
 
       {/* Category filters + project cards – white bg */}
